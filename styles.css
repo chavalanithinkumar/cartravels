@@ -5,28 +5,28 @@
 
 /* ---- CSS Variables ---- */
 :root {
-  --sky: #EBF4FF;
-  --sky-mid: #D6EAFF;
-  --blue: #2563EB;
-  --blue-dark: #1D4ED8;
-  --blue-light: #BFDBFE;
+  --sky: #E0F2FE;
+  --sky-mid: #BAE6FD;
+  --blue: #0EA5E9;
+  --blue-dark: #0284C7;
+  --blue-light: #7DD3FC;
   --teal: transparent;
   --mint: #F0FDF9;
   --white: #FFFFFF;
-  --offwhite: #F8FAFC;
-  --grey-50: #F9FAFB;
-  --grey-100: #F1F5F9;
-  --grey-200: #E2E8F0;
-  --grey-400: #94A3B8;
-  --grey-600: #475569;
-  --grey-800: #1E293B;
-  --accent: #F59E0B;
-  --accent-light: #FEF9C3;
+  --offwhite: #FAFAF9;
+  --grey-50: #F5F5F4;
+  --grey-100: #E7E5E4;
+  --grey-200: #D6D3D1;
+  --grey-400: #A8A29E;
+  --grey-600: #57534E;
+  --grey-800: #1C1917;
+  --accent: #F97316;
+  --accent-light: #FFEDD5;
   --green: #16A34A;
   --red: #DC2626;
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
-  --shadow-md: 0 4px 16px rgba(37,99,235,0.08);
-  --shadow-lg: 0 8px 32px rgba(37,99,235,0.12);
+  --shadow-md: 0 4px 16px rgba(14,165,233,0.08);
+  --shadow-lg: 0 8px 32px rgba(14,165,233,0.12);
   --radius: 12px;
   --radius-lg: 20px;
   --font-body: 'Poppins', sans-serif;
@@ -147,14 +147,13 @@ button { cursor: pointer; border: none; outline: none; }
 .hero {
   min-height: 100vh;
   background:
-    linear-gradient(135deg, rgba(37,99,235,0.88) 0%, rgba(14,165,233,0.80) 60%, rgba(37,99,235,0.70) 100%),
     url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=80') center/cover no-repeat;
   display: flex; align-items: center; justify-content: center; flex-direction: column;
   padding: 100px 24px 60px;
   text-align: center;
   position: relative;
 }
-.hero-overlay { position: absolute; inset: 0; background: rgba(10,30,80,0.18); }
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
 .hero-content { position: relative; z-index: 1; max-width: 860px; }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
