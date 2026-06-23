@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Travel Destinations – DriveIndia</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fas fa-car-side"></i><span class="logo-text">Drive<span class="accent">India</span></span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="cities.html">Cities</a>
+        <a href="destinations.html" class="active-page">Destinations</a><a href="about.html">About Us</a>
+        <a href="blog.html">Blog</a><a href="track.html">My Booking</a>
+        <a href="index.html#booking" class="nav-book-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+      </nav>
+      <div class="nav-right">
+        <span class="badge-24"><i class="fas fa-circle-dot"></i> 24/7 Available</span>
+        <button class="btn-call" onclick="window.location.href='tel:+919999999999'"><i class="fas fa-phone"></i> Call Now</button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <section class="page-hero" style="--hero-bg:url('https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&q=80')">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Destinations</span></div>
+    <h1>Explore Incredible India</h1>
+    <p>Book a cab to India's most iconic heritage sites, beaches, hill stations, temples and wildlife sanctuaries — all with one tap.</p>
+    <a href="index.html#booking" class="btn-primary" style="margin-top:12px"><i class="fas fa-calendar-check"></i> Book Your Trip</a>
+  </section>
+
+  <section class="trust-strip">
+    <div class="trust-container">
+      <div class="trust-item"><i class="fas fa-umbrella-beach"></i><span>Beaches</span></div>
+      <div class="trust-item"><i class="fas fa-mountain"></i><span>Hill Stations</span></div>
+      <div class="trust-item"><i class="fas fa-place-of-worship"></i><span>Pilgrimage</span></div>
+      <div class="trust-item"><i class="fas fa-monument"></i><span>Heritage</span></div>
+      <div class="trust-item"><i class="fas fa-tree"></i><span>Wildlife</span></div>
+      <div class="trust-item"><i class="fas fa-water"></i><span>Backwaters</span></div>
+    </div>
+  </section>
+
+  <!-- FILTER + GRID -->
+  <section class="dest-page-section">
+    <div class="section-header" style="margin-bottom:28px">
+      <p class="section-eyebrow">Top Destinations</p>
+      <h2>Where Do You Want to Go?</h2>
+      <p class="section-sub">Filter by category and book a car directly to your dream destination</p>
+    </div>
+    <div class="dest-filters">
+      <button class="filter-btn active" onclick="filterDest('all',this)"><i class="fas fa-th"></i> All</button>
+      <button class="filter-btn" onclick="filterDest('heritage',this)"><i class="fas fa-monument"></i> Heritage</button>
+      <button class="filter-btn" onclick="filterDest('pilgrimage',this)"><i class="fas fa-place-of-worship"></i> Pilgrimage</button>
+      <button class="filter-btn" onclick="filterDest('hills',this)"><i class="fas fa-mountain"></i> Hill Stations</button>
+      <button class="filter-btn" onclick="filterDest('beach',this)"><i class="fas fa-umbrella-beach"></i> Beaches</button>
+      <button class="filter-btn" onclick="filterDest('wildlife',this)"><i class="fas fa-paw"></i> Wildlife</button>
+      <button class="filter-btn" onclick="filterDest('backwater',this)"><i class="fas fa-water"></i> Backwaters</button>
+    </div>
+    <div class="dest-big-grid" id="destGrid">
+
+      <div class="dest-full-card" data-cat="heritage">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=700&q=80" alt="Taj Mahal" loading="lazy"/>
+          <span class="dest-cat-tag">Heritage</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Taj Mahal, Agra</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh</p>
+          <p>The iconic white marble mausoleum built by Mughal Emperor Shah Jahan. A UNESCO World Heritage Site and one of the Seven Wonders of the World — a must-visit on any India trip.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Delhi <strong>~210 km · 3–4 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="pilgrimage">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1571536802807-30451e3955d8?w=700&q=80" alt="Varanasi Ghats" loading="lazy"/>
+          <span class="dest-cat-tag">Pilgrimage</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Varanasi Ghats</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Varanasi, Uttar Pradesh</p>
+          <p>The oldest living city in the world, sitting on the banks of the holy Ganga. Experience the mesmerizing Ganga Aarti, ancient ghats and the spiritual heart of India.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Delhi <strong>~820 km · 12–13 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="heritage">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=700&q=80" alt="Jaipur" loading="lazy"/>
+          <span class="dest-cat-tag">Heritage</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Jaipur – The Pink City</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan</p>
+          <p>India's first planned city, known for its stunning amber forts, palaces and vibrant bazaars. The Hawa Mahal, City Palace and Amber Fort are unmissable royal jewels.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Delhi <strong>~270 km · 4–5 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="hills">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1601643157091-ce5c665179ab?w=700&q=80" alt="Manali" loading="lazy"/>
+          <span class="dest-cat-tag">Hill Station</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Manali Snowfields</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Manali, Himachal Pradesh</p>
+          <p>Nestled in the Himalayas, Manali is a paradise for nature lovers and adventure seekers. Snow-capped peaks, Rohtang Pass, Solang Valley and hot spring rivers await.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Delhi <strong>~570 km · 12 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="backwater">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1536625979259-5ea8a9b2c9de?w=700&q=80" alt="Kerala Backwaters" loading="lazy"/>
+          <span class="dest-cat-tag">Backwaters</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Kerala Backwaters</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Alleppey / Kottayam, Kerala</p>
+          <p>Cruise through the serene network of lagoons, lakes and canals lined with coconut trees. The Alleppey backwaters on a houseboat is one of India's most unique experiences.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Kochi <strong>~60 km · 1.5 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="beach">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1529260830199-42c24126f198?w=700&q=80" alt="Goa Beaches" loading="lazy"/>
+          <span class="dest-cat-tag">Beach</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Goa Beaches</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> North & South Goa</p>
+          <p>India's favourite beach destination with golden sands, water sports, beach shacks, seafood and an electric nightlife. Perfect for every type of traveller, every season.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Mumbai <strong>~600 km · 10 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="pilgrimage">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1545126520-968a48f85f74?w=700&q=80" alt="Tirupati Temple" loading="lazy"/>
+          <span class="dest-cat-tag">Pilgrimage</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Tirupati Balaji Temple</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Tirupati, Andhra Pradesh</p>
+          <p>One of the richest and most visited temples in the world, dedicated to Lord Venkateswara. Millions of devotees visit every year to seek blessings on the sacred Tirumala hills.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Chennai <strong>~140 km · 2.5 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="hills">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=700&q=80" alt="Ooty Hills" loading="lazy"/>
+          <span class="dest-cat-tag">Hill Station</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Ooty – Queen of Hills</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Nilgiris, Tamil Nadu</p>
+          <p>Rolling tea gardens, towering eucalyptus forests and pleasant cool weather make Ooty the beloved "Queen of Hill Stations." The toy train ride is a UNESCO experience in itself.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Bangalore <strong>~270 km · 5 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="wildlife">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1548535441-3b5a1e79c8a7?w=700&q=80" alt="Jim Corbett National Park" loading="lazy"/>
+          <span class="dest-cat-tag">Wildlife</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Jim Corbett National Park</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Ramnagar, Uttarakhand</p>
+          <p>India's oldest national park and the birthplace of Project Tiger. Spot the Royal Bengal Tiger, leopards, elephants and hundreds of bird species in lush Himalayan foothills.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Delhi <strong>~260 km · 5 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="heritage">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1590581559823-a1d0abe8d6b5?w=700&q=80" alt="Hampi Ruins" loading="lazy"/>
+          <span class="dest-cat-tag">Heritage</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Hampi Ruins</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Hampi, Karnataka</p>
+          <p>A UNESCO World Heritage Site spread across surreal boulder landscapes. The ruins of the Vijayanagara Empire include magnificent temples, royal enclosures and ancient bazaars.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Bangalore <strong>~350 km · 6 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="pilgrimage">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1617516716802-2d9c5b52af45?w=700&q=80" alt="Amritsar Golden Temple" loading="lazy"/>
+          <span class="dest-cat-tag">Pilgrimage</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Golden Temple, Amritsar</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Amritsar, Punjab</p>
+          <p>The holiest Gurdwara of the Sikh faith, the Harmandir Sahib glitters in gold and reflects beautifully in the surrounding Amrit Sarovar lake. Open to all, free langar served 24/7.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Delhi <strong>~450 km · 7 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dest-full-card" data-cat="hills">
+        <div class="dest-full-img">
+          <img src="https://images.unsplash.com/photo-1597074866923-dc0589150358?w=700&q=80" alt="Darjeeling Tea Gardens" loading="lazy"/>
+          <span class="dest-cat-tag">Hill Station</span>
+        </div>
+        <div class="dest-full-body">
+          <h3>Darjeeling Tea Gardens</h3>
+          <p class="dest-loc"><i class="fas fa-map-marker-alt"></i> Darjeeling, West Bengal</p>
+          <p>Famous for its muscatel tea, colonial charm and breathtaking views of Mt. Kanchenjunga. The Darjeeling Himalayan Railway (Toy Train) is a UNESCO World Heritage journey.</p>
+          <div class="dest-full-footer">
+            <div class="dest-km">From Siliguri <strong>~80 km · 2.5 hrs</strong></div>
+            <a href="index.html#booking" class="btn-book-sm" style="width:auto;padding:8px 20px">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand"><div class="logo"><i class="fas fa-car-side"></i> <span class="logo-text">Drive<span class="accent">India</span></span></div><p>All India Car & Tempo Travel — Safe, Affordable, 24/7.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div></div>
+      <div class="footer-links"><h4>Pages</h4><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="cities.html">Cities</a><a href="destinations.html">Destinations</a><a href="about.html">About</a><a href="blog.html">Blog</a></div>
+      <div class="footer-links"><h4>Top Destinations</h4><a href="#">Taj Mahal, Agra</a><a href="#">Jaipur</a><a href="#">Goa</a><a href="#">Manali</a><a href="#">Kerala</a></div>
+      <div class="footer-links"><h4>Contact</h4><a href="tel:+919999999999">+91 99999 99999</a><a href="mailto:support@driveindia.in">support@driveindia.in</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 DriveIndia. All Rights Reserved.</p><div class="payment-icons"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i></div></div>
+  </footer>
+
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+  <script src="script.js"></script>
+  <script>
+    function filterDest(cat, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.dest-full-card').forEach(card => {
+        card.style.display = (cat === 'all' || card.dataset.cat === cat) ? '' : 'none';
+      });
+    }
+  </script>
+</body>
+</html> 

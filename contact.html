@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – DriveIndia Car & Tempo Travel</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-car-side"></i>
+        <span class="logo-text">Drive<span class="accent">India</span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="cities.html">Cities</a>
+        <a href="booking.html" class="nav-book-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html" class="active-page">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="badge-24"><i class="fas fa-circle-dot"></i> 24/7 Available</span>
+        <button class="btn-call" onclick="window.location.href='tel:+919999999999'">
+          <i class="fas fa-phone"></i> Call Now
+        </button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="--hero-bg:url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1600&q=80')">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Contact Us</span></div>
+    <h1>Get In Touch With Us</h1>
+    <p>Have questions or need a custom quote? Reach us anytime — day or night. We're here to help you plan your perfect journey.</p>
+  </section>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2>We're Here to Help, Always</h2>
+        <p>Have questions or need a custom quote? Reach us anytime — day or night.</p>
+        <div class="contact-items">
+          <a href="tel:+919999999999" class="contact-item">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div><strong>Call Us Anytime</strong><span>+91 99999 99999</span></div>
+          </a>
+          <a href="https://wa.me/919999999999" class="contact-item">
+            <div class="ci-icon whatsapp"><i class="fab fa-whatsapp"></i></div>
+            <div><strong>WhatsApp Us</strong><span>+91 99999 99999</span></div>
+          </a>
+          <a href="mailto:support@driveindia.in" class="contact-item">
+            <div class="ci-icon email"><i class="fas fa-envelope"></i></div>
+            <div><strong>Email Support</strong><span>support@driveindia.in</span></div>
+          </a>
+          <div class="contact-item">
+            <div class="ci-icon location"><i class="fas fa-map-marker-alt"></i></div>
+            <div><strong>Head Office</strong><span>Mumbai, Maharashtra, India</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <h3>Send Us a Message</h3>
+        <form id="contactForm" onsubmit="submitContact(event)">
+          <div class="cform-group">
+            <input type="text" placeholder="Your Name" required/>
+          </div>
+          <div class="cform-group">
+            <input type="tel" placeholder="Mobile Number" required/>
+          </div>
+          <div class="cform-group">
+            <input type="email" placeholder="Email Address" required/>
+          </div>
+          <div class="cform-group">
+            <textarea rows="4" placeholder="Your message or enquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><i class="fas fa-car-side"></i> <span class="logo-text">Drive<span class="accent">India</span></span></div>
+        <p>All India Car & Tempo Travel — Safe, Affordable, 24/7.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="cities.html">Cities</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Popular Routes</h4>
+        <a href="booking.html">Delhi → Agra</a>
+        <a href="booking.html">Mumbai → Pune</a>
+        <a href="booking.html">Bangalore → Mysore</a>
+        <a href="booking.html">Hyderabad → Vizag</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="tel:+919999999999">+91 99999 99999</a>
+        <a href="mailto:support@driveindia.in">support@driveindia.in</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DriveIndia. All Rights Reserved.</p>
+      <div class="payment-icons"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>

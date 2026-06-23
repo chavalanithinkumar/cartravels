@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Fleet – DriveIndia Car & Tempo Travels</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-car-side"></i>
+        <span class="logo-text">Drive<span class="accent">India</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="vehicles.html" class="active-page">Vehicles</a>
+        <a href="cities.html">Cities</a>
+        <a href="booking.html" class="nav-book-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="badge-24"><i class="fas fa-circle-dot"></i> 24/7 Available</span>
+        <button class="btn-call" onclick="window.location.href='tel:+919999999999'"><i class="fas fa-phone"></i> Call Now</button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="--hero-bg:url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80')">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Our Fleet</span>
+    </div>
+    <h1>Our Premium Fleet</h1>
+    <p>From compact sedans to large group tempos — every vehicle is AC-equipped, GPS-tracked, sanitised and driven by a verified professional.</p>
+    <a href="booking.html" class="btn-primary" style="margin-top:8px"><i class="fas fa-calendar-check"></i> Book Your Vehicle</a>
+  </section>
+
+  <!-- TRUST STRIP -->
+  <section class="trust-strip">
+    <div class="trust-container">
+      <div class="trust-item"><i class="fas fa-snowflake"></i><span>All Vehicles Air-Conditioned</span></div>
+      <div class="trust-item"><i class="fas fa-location-crosshairs"></i><span>GPS Tracked 24/7</span></div>
+      <div class="trust-item"><i class="fas fa-shield-halved"></i><span>Fully Insured Fleet</span></div>
+      <div class="trust-item"><i class="fas fa-spray-can-sparkles"></i><span>Sanitised Before Every Trip</span></div>
+      <div class="trust-item"><i class="fas fa-user-check"></i><span>Verified Drivers Only</span></div>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section style="padding: 40px 24px 0; background: var(--offwhite);">
+    <div class="section-header" style="margin-bottom:28px">
+      <p class="section-eyebrow">Choose Your Ride</p>
+      <h2>All Available Vehicles</h2>
+      <p class="section-sub">Filter by type or capacity to find the perfect vehicle for your journey</p>
+    </div>
+    <div class="vehicles-filter">
+      <button class="filter-btn active" onclick="filterVehicles('all', this)"><i class="fas fa-th"></i> All Vehicles</button>
+      <button class="filter-btn" onclick="filterVehicles('sedan', this)"><i class="fas fa-car"></i> Sedans</button>
+      <button class="filter-btn" onclick="filterVehicles('suv', this)"><i class="fas fa-car-side"></i> SUVs</button>
+      <button class="filter-btn" onclick="filterVehicles('tempo', this)"><i class="fas fa-bus"></i> Tempo Travellers</button>
+      <button class="filter-btn" onclick="filterVehicles('bus', this)"><i class="fas fa-bus-alt"></i> Mini Bus</button>
+      <button class="filter-btn" onclick="filterVehicles('premium', this)"><i class="fas fa-star"></i> Premium</button>
+    </div>
+  </section>
+
+  <div class="vehicles-grid">
+    <!-- Swift Dzire / Etios -->
+    <div class="vehicle-card" data-type="sedan">
+      <div class="vehicle-img-wrap">
+        <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80" alt="Swift Dzire Sedan" loading="lazy"/>
+        <div class="vehicle-badge">Most Popular</div>
+      </div>
+      <div class="vehicle-body">
+        <h3>Swift Dzire / Etios</h3>
+        <p class="vehicle-type">Sedan • 4 Seater</p>
+        <div class="vehicle-features">
+          <span><i class="fas fa-snowflake"></i> AC</span>
+          <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+          <span><i class="fas fa-gas-pump"></i> Diesel/CNG</span>
+          <span><i class="fas fa-shield"></i> Insured</span>
+        </div>
+        <div class="vehicle-price">Starting ₹12/km</div>
+        <a href="booking.html?vehicle=sedan" class="btn-book-sm">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Innova / Ertiga -->
+    <div class="vehicle-card" data-type="suv">
+      <div class="vehicle-img-wrap">
+        <img src="/images/innova.jpg" alt="Toyota Innova SUV" loading="lazy"/>
+        <div class="vehicle-badge">Family Choice</div>
+      </div>
+      <div class="vehicle-body">
+        <h3>Innova / Ertiga</h3>
+        <p class="vehicle-type">SUV • 6–7 Seater</p>
+        <div class="vehicle-features">
+          <span><i class="fas fa-snowflake"></i> AC</span>
+          <span><i class="fas fa-music"></i> Music</span>
+          <span><i class="fas fa-car-burst"></i> Safe</span>
+          <span><i class="fas fa-suitcase"></i> Luggage</span>
+        </div>
+        <div class="vehicle-price">Starting ₹16/km</div>
+        <a href="booking.html?vehicle=suv" class="btn-book-sm">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Innova Crysta / XUV700 -->
+    <div class="vehicle-card" data-type="suv premium">
+      <div class="vehicle-img-wrap">
+        <img src="/images/xuv700.avif" alt="Innova Crysta Premium" loading="lazy"/>
+        <div class="vehicle-badge">Premium</div>
+      </div>
+      <div class="vehicle-body">
+        <h3>Innova Crysta / XUV700</h3>
+        <p class="vehicle-type">Premium SUV • 7 Seater</p>
+        <div class="vehicle-features">
+          <span><i class="fas fa-star"></i> Premium</span>
+          <span><i class="fas fa-snowflake"></i> AC</span>
+          <span><i class="fas fa-plug"></i> Charging</span>
+          <span><i class="fas fa-shield"></i> GPS</span>
+        </div>
+        <div class="vehicle-price">Starting ₹20/km</div>
+        <a href="booking.html?vehicle=xuv" class="btn-book-sm">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Tempo Traveller -->
+    <div class="vehicle-card" data-type="tempo">
+      <div class="vehicle-img-wrap">
+        <img src="/images/tempo-traveller-3050-1632120806.webp" alt="Tempo Traveller 9 Seater" loading="lazy"/>
+        <div class="vehicle-badge">Group Travel</div>
+      </div>
+      <div class="vehicle-body">
+        <h3>Tempo Traveller</h3>
+        <p class="vehicle-type">9 / 12 Seater • Group</p>
+        <div class="vehicle-features">
+          <span><i class="fas fa-snowflake"></i> AC</span>
+          <span><i class="fas fa-chair"></i> Push-back</span>
+          <span><i class="fas fa-tv"></i> LCD</span>
+          <span><i class="fas fa-route"></i> All India</span>
+        </div>
+        <div class="vehicle-price">Starting ₹25/km</div>
+        <a href="booking.html?vehicle=tempo-9" class="btn-book-sm">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Tempo Traveller 15 -->
+    <div class="vehicle-card" data-type="tempo">
+      <div class="vehicle-img-wrap">
+        <img src="/images/tempo15.webp" alt="Tempo Traveller 15 Seater" loading="lazy"/>
+        <div class="vehicle-badge">Large Group</div>
+      </div>
+      <div class="vehicle-body">
+        <h3>Tempo Traveller 15</h3>
+        <p class="vehicle-type">15 Seater • Large Groups</p>
+        <div class="vehicle-features">
+          <span><i class="fas fa-snowflake"></i> AC</span>
+          <span><i class="fas fa-chair"></i> Recliner</span>
+          <span><i class="fas fa-music"></i> Music</span>
+          <span><i class="fas fa-suitcase"></i> Luggage</span>
+        </div>
+        <div class="vehicle-price">Starting ₹30/km</div>
+        <a href="booking.html?vehicle=tempo-15" class="btn-book-sm">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Mini Bus -->
+    <div class="vehicle-card" data-type="bus">
+      <div class="vehicle-img-wrap">
+        <img src="/images/mini bus.webp" alt="Mini Bus 20 Seater" loading="lazy"/>
+        <div class="vehicle-badge">Best Value</div>
+      </div>
+      <div class="vehicle-body">
+        <h3>Mini Bus</h3>
+        <p class="vehicle-type">20 Seater • Events &amp; Tours</p>
+        <div class="vehicle-features">
+          <span><i class="fas fa-snowflake"></i> AC</span>
+          <span><i class="fas fa-tv"></i> LCD TV</span>
+          <span><i class="fas fa-music"></i> DJ Ready</span>
+          <span><i class="fas fa-route"></i> All India</span>
+        </div>
+        <div class="vehicle-price">Starting ₹40/km</div>
+        <a href="booking.html?vehicle=minibus" class="btn-book-sm">Book Now</a>
+      </div>
+    </div>
+  </div>
+  
+<!-- end vehicles-list -->
+
+  <!-- COMPARE TABLE -->
+  <section style="padding: 0 24px 80px; background: var(--offwhite);">
+    <div style="max-width:1000px;margin:0 auto">
+      <div class="section-header" style="margin-bottom:32px">
+        <p class="section-eyebrow">Quick Comparison</p>
+        <h2>Vehicle Comparison Table</h2>
+      </div>
+      <div style="overflow-x:auto; border-radius:var(--radius-lg); box-shadow:var(--shadow-md); border:1px solid var(--grey-200);">
+        <table style="width:100%;border-collapse:collapse;background:var(--white);font-size:0.86rem;">
+          <thead>
+            <tr style="background:var(--blue);color:var(--white);">
+              <th style="padding:14px 18px;text-align:left">Vehicle</th>
+              <th style="padding:14px 12px;text-align:center">Seats</th>
+              <th style="padding:14px 12px;text-align:center">Rate/km</th>
+              <th style="padding:14px 12px;text-align:center">Min Fare</th>
+              <th style="padding:14px 12px;text-align:center">AC</th>
+              <th style="padding:14px 12px;text-align:center">GPS</th>
+              <th style="padding:14px 12px;text-align:center">Best For</th>
+            </tr>
+          </thead>
+          <tbody id="compareTable">
+            <tr style="border-bottom:1px solid var(--grey-100)"><td style="padding:13px 18px;font-weight:600">Swift Dzire / Etios</td><td style="padding:13px 12px;text-align:center">4</td><td style="padding:13px 12px;text-align:center;color:var(--blue);font-weight:700">₹12</td><td style="padding:13px 12px;text-align:center">₹800</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center">Solo / Couple</td></tr>
+            <tr style="border-bottom:1px solid var(--grey-100);background:var(--grey-50)"><td style="padding:13px 18px;font-weight:600">Innova / Ertiga</td><td style="padding:13px 12px;text-align:center">6–7</td><td style="padding:13px 12px;text-align:center;color:var(--blue);font-weight:700">₹14–16</td><td style="padding:13px 12px;text-align:center">₹1,100</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center">Family</td></tr>
+            <tr style="border-bottom:1px solid var(--grey-100)"><td style="padding:13px 18px;font-weight:600">Innova Crysta / XUV700</td><td style="padding:13px 12px;text-align:center">7</td><td style="padding:13px 12px;text-align:center;color:var(--blue);font-weight:700">₹20</td><td style="padding:13px 12px;text-align:center">₹1,500</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center">Business / VIP</td></tr>
+            <tr style="border-bottom:1px solid var(--grey-100);background:var(--grey-50)"><td style="padding:13px 18px;font-weight:600">Tempo 9 Seater</td><td style="padding:13px 12px;text-align:center">9</td><td style="padding:13px 12px;text-align:center;color:var(--blue);font-weight:700">₹25</td><td style="padding:13px 12px;text-align:center">₹2,000</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center">Small Groups</td></tr>
+            <tr style="border-bottom:1px solid var(--grey-100)"><td style="padding:13px 18px;font-weight:600">Tempo 12 Seater</td><td style="padding:13px 12px;text-align:center">12</td><td style="padding:13px 12px;text-align:center;color:var(--blue);font-weight:700">₹28</td><td style="padding:13px 12px;text-align:center">₹2,400</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center">Office / Tours</td></tr>
+            <tr style="border-bottom:1px solid var(--grey-100);background:var(--grey-50)"><td style="padding:13px 18px;font-weight:600">Tempo 15 Seater</td><td style="padding:13px 12px;text-align:center">15</td><td style="padding:13px 12px;text-align:center;color:var(--blue);font-weight:700">₹32</td><td style="padding:13px 12px;text-align:center">₹3,000</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center">Pilgrimages</td></tr>
+            <tr><td style="padding:13px 18px;font-weight:600">Mini Bus 20 Seater</td><td style="padding:13px 12px;text-align:center">20</td><td style="padding:13px 12px;text-align:center;color:var(--blue);font-weight:700">₹40</td><td style="padding:13px 12px;text-align:center">₹4,000</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center;color:var(--green)">✓</td><td style="padding:13px 12px;text-align:center">Events / Weddings</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="text-align:center;font-size:0.78rem;color:var(--grey-400);margin-top:12px">* Toll, parking & state permit charges extra. Rates inclusive of driver allowance for outstation trips.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><i class="fas fa-car-side"></i> <span class="logo-text">Drive<span class="accent">India</span></span></div>
+        <p>All India Car & Tempo Travel — Safe, Affordable, 24/7.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links"><h4>Pages</h4><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="cities.html">Cities</a><a href="destinations.html">Destinations</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="track.html">My Booking</a></div>
+      <div class="footer-links"><h4>Services</h4><a href="index.html#booking">One-Way</a><a href="index.html#booking">Round Trip</a><a href="index.html#booking">Outstation</a><a href="index.html#booking">Hourly</a><a href="index.html#booking">Group Tempo</a></div>
+      <div class="footer-links"><h4>Contact</h4><a href="tel:+919999999999">+91 99999 99999</a><a href="mailto:support@driveindia.in">support@driveindia.in</a><a href="https://wa.me/919999999999">WhatsApp Us</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DriveIndia. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
+      <div class="payment-icons"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-cc-paypal"></i></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+  <script>
+    function filterVehicles(type, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.vehicle-card').forEach(card => {
+        if (type === 'all' || card.dataset.type.includes(type)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

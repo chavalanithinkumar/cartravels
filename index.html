@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DriveIndia – All India 24/7 Car & Tempo Travel Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-car-side"></i>
+        <span class="logo-text">Drive<span class="accent">India</span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html" class="active-page">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="cities.html">Cities</a>
+        <a href="booking.html" class="nav-book-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="badge-24"><i class="fas fa-circle-dot"></i> 24/7 Available</span>
+        <button class="btn-call" onclick="window.location.href='tel:+919999999999'">
+          <i class="fas fa-phone"></i> Call Now
+        </button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><i class="fas fa-map-pin"></i> All India Coverage • Pan India Service</p>
+      <h1 class="hero-title">Your Trusted Travel Partner<br><span class="accent">Across Every Road in India</span></h1>
+      <p class="hero-subtitle">Comfortable, Safe & Affordable Car and Tempo Travels — Available 24 Hours, 7 Days a Week,
+        365 Days a Year.</p>
+      <div class="hero-stats">
+        <div class="stat"><strong>500+</strong><span>Cities Covered</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>10,000+</strong><span>Happy Customers</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>24/7</strong><span>Support</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>100%</strong><span>Secure Booking</span></div>
+      </div>
+      <div class="hero-btns">
+        <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book a Ride</a>
+        <a href="vehicles.html" class="btn-outline"><i class="fas fa-car"></i> View Vehicles</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span>Scroll Down</span>
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- ===== TRUST STRIP ===== -->
+  <section class="trust-strip">
+    <div class="trust-container">
+      <div class="trust-item"><i class="fas fa-shield-halved"></i><span>100% Secure Payment</span></div>
+      <div class="trust-item"><i class="fas fa-headset"></i><span>24/7 Customer Support</span></div>
+      <div class="trust-item"><i class="fas fa-route"></i><span>All India Routes</span></div>
+      <div class="trust-item"><i class="fas fa-star"></i><span>4.9★ Rated Service</span></div>
+      <div class="trust-item"><i class="fas fa-user-shield"></i><span>Verified Drivers Only</span></div>
+      <div class="trust-item"><i class="fas fa-clock"></i><span>On-Time Guarantee</span></div>
+    </div>
+  </section>
+
+  <!-- ===== VEHICLES SECTION ===== -->
+  <section class="vehicles-section" id="vehicles">
+    <div class="section-header">
+      <p class="section-eyebrow">Our Fleet</p>
+      <h2>Choose Your Perfect Vehicle</h2>
+      <p class="section-sub">Well-maintained, GPS-tracked and sanitised vehicles for every journey</p>
+    </div>
+    <div class="vehicles-grid">
+
+      <div class="vehicle-card">
+        <div class="vehicle-img-wrap">
+          <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?w=600&q=80" alt="Swift Dzire Sedan"
+            loading="lazy" />
+          <div class="vehicle-badge">Most Popular</div>
+        </div>
+        <div class="vehicle-body">
+          <h3>Swift Dzire / Etios</h3>
+          <p class="vehicle-type">Sedan • 4 Seater</p>
+          <div class="vehicle-features">
+            <span><i class="fas fa-snowflake"></i> AC</span>
+            <span><i class="fas fa-wifi"></i> Wi-Fi</span>
+            <span><i class="fas fa-gas-pump"></i> Diesel/CNG</span>
+            <span><i class="fas fa-shield"></i> Insured</span>
+          </div>
+          <div class="vehicle-price">Starting ₹12/km</div>
+          <a href="booking.html?vehicle=sedan" class="btn-book-sm">Book Now</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img-wrap">
+          <img src="/images/innova.jpg" alt="Toyota Innova SUV" loading="lazy" />
+          <div class="vehicle-badge">Family Choice</div>
+        </div>
+        <div class="vehicle-body">
+          <h3>Innova / Ertiga</h3>
+          <p class="vehicle-type">SUV • 6–7 Seater</p>
+          <div class="vehicle-features">
+            <span><i class="fas fa-snowflake"></i> AC</span>
+            <span><i class="fas fa-music"></i> Music</span>
+            <span><i class="fas fa-car-burst"></i> Safe</span>
+            <span><i class="fas fa-suitcase"></i> Luggage</span>
+          </div>
+          <div class="vehicle-price">Starting ₹16/km</div>
+          <a href="booking.html?vehicle=suv" class="btn-book-sm">Book Now</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img-wrap">
+          <img src="/images/xuv700.avif" alt="Innova Crysta Premium" loading="lazy" />
+          <div class="vehicle-badge">Premium</div>
+        </div>
+        <div class="vehicle-body">
+          <h3>Innova Crysta / XUV700</h3>
+          <p class="vehicle-type">Premium SUV • 7 Seater</p>
+          <div class="vehicle-features">
+            <span><i class="fas fa-star"></i> Premium</span>
+            <span><i class="fas fa-snowflake"></i> AC</span>
+            <span><i class="fas fa-plug"></i> Charging</span>
+            <span><i class="fas fa-shield"></i> GPS</span>
+          </div>
+          <div class="vehicle-price">Starting ₹20/km</div>
+          <a href="booking.html?vehicle=xuv" class="btn-book-sm">Book Now</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img-wrap">
+          <img src="/images/tempo-traveller-3050-1632120806.webp" alt="Tempo Traveller 9 Seater" loading="lazy" />
+          <div class="vehicle-badge">Group Travel</div>
+        </div>
+        <div class="vehicle-body">
+          <h3>Tempo Traveller</h3>
+          <p class="vehicle-type">9 / 12 Seater • Group</p>
+          <div class="vehicle-features">
+            <span><i class="fas fa-snowflake"></i> AC</span>
+            <span><i class="fas fa-chair"></i> Push-back</span>
+            <span><i class="fas fa-tv"></i> LCD</span>
+            <span><i class="fas fa-route"></i> All India</span>
+          </div>
+          <div class="vehicle-price">Starting ₹25/km</div>
+          <a href="booking.html?vehicle=tempo-9" class="btn-book-sm">Book Now</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img-wrap">
+          <img src="/images/tempo15.webp" alt="Tempo Traveller 15 Seater" loading="lazy" />
+          <div class="vehicle-badge">Large Group</div>
+        </div>
+        <div class="vehicle-body">
+          <h3>Tempo Traveller 15</h3>
+          <p class="vehicle-type">15 Seater • Large Groups</p>
+          <div class="vehicle-features">
+            <span><i class="fas fa-snowflake"></i> AC</span>
+            <span><i class="fas fa-chair"></i> Recliner</span>
+            <span><i class="fas fa-music"></i> Music</span>
+            <span><i class="fas fa-suitcase"></i> Luggage</span>
+          </div>
+          <div class="vehicle-price">Starting ₹30/km</div>
+          <a href="booking.html?vehicle=tempo-15" class="btn-book-sm">Book Now</a>
+        </div>
+      </div>
+
+      <div class="vehicle-card">
+        <div class="vehicle-img-wrap">
+          <img src="/images/mini bus.webp" alt="Mini Bus 20 Seater" loading="lazy" />
+          <div class="vehicle-badge">Best Value</div>
+        </div>
+        <div class="vehicle-body">
+          <h3>Mini Bus</h3>
+          <p class="vehicle-type">20 Seater • Events & Tours</p>
+          <div class="vehicle-features">
+            <span><i class="fas fa-snowflake"></i> AC</span>
+            <span><i class="fas fa-tv"></i> LCD TV</span>
+            <span><i class="fas fa-music"></i> DJ Ready</span>
+            <span><i class="fas fa-route"></i> All India</span>
+          </div>
+          <div class="vehicle-price">Starting ₹40/km</div>
+          <a href="booking.html?vehicle=minibus" class="btn-book-sm">Book Now</a>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="vehicles.html" class="btn-outline"><i class="fas fa-car"></i> View All Vehicles</a>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR CITIES ===== -->
+  <section class="cities-section">
+    <div class="section-header">
+      <p class="section-eyebrow">All India Coverage</p>
+      <h2>Most Popular Cities We Serve</h2>
+      <p class="section-sub">From metro cities to pilgrimage towns — we cover every corner of India</p>
+    </div>
+    <div class="cities-grid">
+      <div class="city-card">
+        <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?w=400&q=80" alt="Delhi" />
+        <h3>Delhi</h3>
+        <p>NCR Region</p>
+      </div>
+      <div class="city-card">
+        <img src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=400&q=80" alt="Mumbai" />
+        <h3>Mumbai</h3>
+        <p>Maharashtra</p>
+      </div>
+      <div class="city-card">
+        <img src="/images/bangolore.jpg" alt="Bangalore" />
+        <h3>Bangalore</h3>
+        <p>Karnataka</p>
+      </div>
+      <div class="city-card">
+        <img src="/images/Chennai-bg.avif" alt="Chennai" />
+        <h3>Chennai</h3>
+        <p>Tamil Nadu</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:32px">
+      <a href="cities.html" class="btn-outline"><i class="fas fa-map-marker-alt"></i> View All 500+ Cities</a>
+    </div>
+  </section>
+
+  <!-- ===== POPULAR DESTINATIONS ===== -->
+  <section class="destinations-section">
+    <div class="section-header">
+      <p class="section-eyebrow">Explore India</p>
+      <h2>Most Popular Travel Destinations</h2>
+      <p class="section-sub">Book a cab to India's most beloved tourist, pilgrimage & heritage spots</p>
+    </div>
+    <div class="destinations-grid">
+      <div class="dest-card"
+        style="background-image:url('https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80')">
+        <div class="dest-overlay"></div>
+        <div class="dest-content">
+          <h3>Taj Mahal, Agra</h3>
+          <p>Uttar Pradesh</p><a href="booking.html" class="dest-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="dest-card" style="background-image:url('/images/Varanasi\ Ghats.webp')">
+        <div class="dest-overlay"></div>
+        <div class="dest-content">
+          <h3>Varanasi Ghats</h3>
+          <p>Uttar Pradesh</p><a href="booking.html" class="dest-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="dest-card"
+        style="background-image:url('https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80')">
+        <div class="dest-overlay"></div>
+        <div class="dest-content">
+          <h3>Jaipur Pink City</h3>
+          <p>Rajasthan</p><a href="booking.html" class="dest-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="dest-card" style="background-image:url('/images/snowfall.webp')">
+        <div class="dest-overlay"></div>
+        <div class="dest-content">
+          <h3>Manali Snowfields</h3>
+          <p>Himachal Pradesh</p><a href="booking.html" class="dest-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="dest-card" style="background-image:url('/images/kerala.jpg')">
+        <div class="dest-overlay"></div>
+        <div class="dest-content">
+          <h3>Kerala Backwaters</h3>
+          <p>Kerala</p><a href="booking.html" class="dest-btn">Book Now</a>
+        </div>
+      </div>
+      <div class="dest-card" style="background-image:url('/images/Goa\ Beaches.jpg')">
+        <div class="dest-overlay"></div>
+        <div class="dest-content">
+          <h3>Goa Beaches</h3>
+          <p>Goa</p><a href="booking.html" class="dest-btn">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><i class="fas fa-car-side"></i> <span class="logo-text">Drive<span
+              class="accent">India</span></span></div>
+        <p>All India Car & Tempo Travel Service — Safe, Affordable, 24/7 Available. Your trusted road travel partner
+          since 2015.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="booking.html">Book a Ride</a>
+        <a href="vehicles.html">Our Fleet</a>
+        <a href="cities.html">Cities We Serve</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Popular Routes</h4>
+        <a href="booking.html">Delhi → Agra</a>
+        <a href="booking.html">Mumbai → Pune</a>
+        <a href="booking.html">Bangalore → Mysore</a>
+        <a href="booking.html">Chennai → Coimbatore</a>
+        <a href="booking.html">Hyderabad → Vizag</a>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="booking.html">One-Way Trips</a>
+        <a href="booking.html">Round Trips</a>
+        <a href="booking.html">Outstation Cabs</a>
+        <a href="booking.html">Local Hourly</a>
+        <a href="booking.html">Group Tempo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DriveIndia. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> |
+        <a href="#">Refund Policy</a>
+      </p>
+      <div class="payment-icons">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-paypal"></i>
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING ELEMENTS ===== -->
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

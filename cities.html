@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cities We Serve – DriveIndia All India Coverage</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <i class="fas fa-car-side"></i>
+        <span class="logo-text">Drive<span class="accent">India</span></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="cities.html" class="active-page">Cities</a>
+        <a href="booking.html" class="nav-book-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="badge-24"><i class="fas fa-circle-dot"></i> 24/7 Available</span>
+        <button class="btn-call" onclick="window.location.href='tel:+919999999999'"><i class="fas fa-phone"></i> Call Now</button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero" style="--hero-bg:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=1600&q=80')">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Cities We Serve</span></div>
+    <h1>500+ Cities Across India</h1>
+    <p>From Kashmir to Kanyakumari, from Mumbai to Meghalaya — we cover every city, every highway, every road in India.</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:16px;flex-wrap:wrap">
+      <a href="booking.html" class="btn-primary"><i class="fas fa-calendar-check"></i> Book Now</a>
+      <a href="tel:+919999999999" class="btn-outline"><i class="fas fa-phone"></i> +91 99999 99999</a>
+    </div>
+  </section>
+
+  <!-- SEARCH BAR -->
+  <section style="padding:40px 24px 0;background:var(--offwhite)">
+    <div class="cities-search" style="max-width:520px">
+      <input type="text" id="citySearch" placeholder="🔍 Search any city or state..." oninput="filterPageCities()"/>
+    </div>
+  </section>
+
+  <!-- CITIES BY STATE -->
+  <section class="cities-page-section" id="citiesContent">
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-landmark"></i> Delhi NCR & North India</div>
+      <div class="state-grid" id="north-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-sun"></i> Rajasthan</div>
+      <div class="state-grid" id="rajasthan-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-mountain"></i> Himachal Pradesh & Uttarakhand</div>
+      <div class="state-grid" id="hills-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-city"></i> Maharashtra & Goa</div>
+      <div class="state-grid" id="west-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-gem"></i> Gujarat</div>
+      <div class="state-grid" id="gujarat-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-tree"></i> South India</div>
+      <div class="state-grid" id="south-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-water"></i> Kerala</div>
+      <div class="state-grid" id="kerala-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-place-of-worship"></i> East India</div>
+      <div class="state-grid" id="east-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-leaf"></i> Northeast India</div>
+      <div class="state-grid" id="northeast-grid"></div>
+    </div>
+
+    <div class="state-group">
+      <div class="state-heading"><i class="fas fa-road"></i> Central India</div>
+      <div class="state-grid" id="central-grid"></div>
+    </div>
+
+  </section>
+
+  <!-- POPULAR ROUTES -->
+  <section class="popular-routes-section">
+    <div class="section-header" style="margin-bottom:36px">
+      <p class="section-eyebrow">Frequently Booked</p>
+      <h2>Most Popular Routes</h2>
+      <p class="section-sub">Click any route to instantly pre-fill your booking form</p>
+    </div>
+    <div class="routes-grid">
+      <div class="route-card" onclick="bookRoute('Delhi','Agra')"><div class="route-cities">Delhi <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Agra</div><div class="route-info"><strong>~210 km</strong>3–4 hrs · From ₹2,520</div></div>
+      <div class="route-card" onclick="bookRoute('Delhi','Jaipur')"><div class="route-cities">Delhi <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Jaipur</div><div class="route-info"><strong>~270 km</strong>4–5 hrs · From ₹3,240</div></div>
+      <div class="route-card" onclick="bookRoute('Delhi','Haridwar')"><div class="route-cities">Delhi <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Haridwar</div><div class="route-info"><strong>~220 km</strong>4 hrs · From ₹2,640</div></div>
+      <div class="route-card" onclick="bookRoute('Mumbai','Pune')"><div class="route-cities">Mumbai <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Pune</div><div class="route-info"><strong>~150 km</strong>2.5 hrs · From ₹1,800</div></div>
+      <div class="route-card" onclick="bookRoute('Mumbai','Goa')"><div class="route-cities">Mumbai <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Goa</div><div class="route-info"><strong>~600 km</strong>10 hrs · From ₹7,200</div></div>
+      <div class="route-card" onclick="bookRoute('Bangalore','Mysore')"><div class="route-cities">Bangalore <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Mysore</div><div class="route-info"><strong>~150 km</strong>3 hrs · From ₹1,800</div></div>
+      <div class="route-card" onclick="bookRoute('Bangalore','Chennai')"><div class="route-cities">Bangalore <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Chennai</div><div class="route-info"><strong>~350 km</strong>5–6 hrs · From ₹4,200</div></div>
+      <div class="route-card" onclick="bookRoute('Hyderabad','Vijayawada')"><div class="route-cities">Hyderabad <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Vijayawada</div><div class="route-info"><strong>~280 km</strong>4–5 hrs · From ₹3,360</div></div>
+      <div class="route-card" onclick="bookRoute('Chennai','Coimbatore')"><div class="route-cities">Chennai <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Coimbatore</div><div class="route-info"><strong>~500 km</strong>7–8 hrs · From ₹6,000</div></div>
+      <div class="route-card" onclick="bookRoute('Kochi','Munnar')"><div class="route-cities">Kochi <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Munnar</div><div class="route-info"><strong>~130 km</strong>3.5 hrs · From ₹1,560</div></div>
+      <div class="route-card" onclick="bookRoute('Jaipur','Udaipur')"><div class="route-cities">Jaipur <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Udaipur</div><div class="route-info"><strong>~400 km</strong>6 hrs · From ₹4,800</div></div>
+      <div class="route-card" onclick="bookRoute('Delhi','Manali')"><div class="route-cities">Delhi <span class="route-arrow"><i class="fas fa-arrow-right"></i></span> Manali</div><div class="route-info"><strong>~570 km</strong>12 hrs · From ₹6,840</div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><i class="fas fa-car-side"></i> <span class="logo-text">Drive<span class="accent">India</span></span></div>
+        <p>All India Car & Tempo Travel — Safe, Affordable, 24/7.</p>
+        <div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a></div>
+      </div>
+      <div class="footer-links"><h4>Pages</h4><a href="index.html">Home</a><a href="vehicles.html">Vehicles</a><a href="cities.html">Cities</a><a href="destinations.html">Destinations</a><a href="about.html">About</a><a href="blog.html">Blog</a></div>
+      <div class="footer-links"><h4>Popular Routes</h4><a href="index.html#booking">Delhi → Agra</a><a href="index.html#booking">Mumbai → Pune</a><a href="index.html#booking">Bangalore → Mysore</a><a href="index.html#booking">Hyderabad → Vizag</a></div>
+      <div class="footer-links"><h4>Contact</h4><a href="tel:+919999999999">+91 99999 99999</a><a href="mailto:support@driveindia.in">support@driveindia.in</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DriveIndia. All Rights Reserved.</p>
+      <div class="payment-icons"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+  <script src="script.js"></script>
+  <script>
+    const stateGroups = {
+      'north-grid': [
+        {name:'Delhi',state:'Delhi',icon:'fa-city'},{name:'Agra',state:'UP',icon:'fa-monument'},{name:'Lucknow',state:'UP',icon:'fa-map-marker-alt'},{name:'Varanasi',state:'UP',icon:'fa-place-of-worship'},{name:'Mathura',state:'UP',icon:'fa-place-of-worship'},{name:'Vrindavan',state:'UP',icon:'fa-place-of-worship'},{name:'Kanpur',state:'UP',icon:'fa-map-marker-alt'},{name:'Prayagraj',state:'UP',icon:'fa-place-of-worship'},{name:'Amritsar',state:'Punjab',icon:'fa-place-of-worship'},{name:'Chandigarh',state:'Punjab',icon:'fa-map-marker-alt'},{name:'Ludhiana',state:'Punjab',icon:'fa-map-marker-alt'}
+      ],
+      'rajasthan-grid': [
+        {name:'Jaipur',state:'Rajasthan',icon:'fa-fort-awesome'},{name:'Jodhpur',state:'Rajasthan',icon:'fa-fort-awesome'},{name:'Udaipur',state:'Rajasthan',icon:'fa-water'},{name:'Jaisalmer',state:'Rajasthan',icon:'fa-sun'},{name:'Ajmer',state:'Rajasthan',icon:'fa-place-of-worship'},{name:'Pushkar',state:'Rajasthan',icon:'fa-place-of-worship'},{name:'Bikaner',state:'Rajasthan',icon:'fa-fort-awesome'},{name:'Kota',state:'Rajasthan',icon:'fa-map-marker-alt'}
+      ],
+      'hills-grid': [
+        {name:'Shimla',state:'HP',icon:'fa-mountain'},{name:'Manali',state:'HP',icon:'fa-mountain'},{name:'Dharamshala',state:'HP',icon:'fa-mountain'},{name:'Kullu',state:'HP',icon:'fa-mountain'},{name:'Dehradun',state:'Uttarakhand',icon:'fa-mountain'},{name:'Haridwar',state:'Uttarakhand',icon:'fa-place-of-worship'},{name:'Rishikesh',state:'Uttarakhand',icon:'fa-place-of-worship'},{name:'Mussoorie',state:'Uttarakhand',icon:'fa-mountain'},{name:'Nainital',state:'Uttarakhand',icon:'fa-water'},{name:'Jim Corbett',state:'Uttarakhand',icon:'fa-tree'}
+      ],
+      'west-grid': [
+        {name:'Mumbai',state:'Maharashtra',icon:'fa-city'},{name:'Pune',state:'Maharashtra',icon:'fa-city'},{name:'Nashik',state:'Maharashtra',icon:'fa-place-of-worship'},{name:'Aurangabad',state:'Maharashtra',icon:'fa-monument'},{name:'Nagpur',state:'Maharashtra',icon:'fa-map-marker-alt'},{name:'Kolhapur',state:'Maharashtra',icon:'fa-map-marker-alt'},{name:'Shirdi',state:'Maharashtra',icon:'fa-place-of-worship'},{name:'Goa',state:'Goa',icon:'fa-umbrella-beach'}
+      ],
+      'gujarat-grid': [
+        {name:'Ahmedabad',state:'Gujarat',icon:'fa-city'},{name:'Surat',state:'Gujarat',icon:'fa-map-marker-alt'},{name:'Vadodara',state:'Gujarat',icon:'fa-map-marker-alt'},{name:'Rajkot',state:'Gujarat',icon:'fa-map-marker-alt'},{name:'Dwarka',state:'Gujarat',icon:'fa-place-of-worship'},{name:'Somnath',state:'Gujarat',icon:'fa-place-of-worship'},{name:'Junagadh',state:'Gujarat',icon:'fa-mountain'},{name:'Kutch',state:'Gujarat',icon:'fa-sun'}
+      ],
+      'south-grid': [
+        {name:'Bangalore',state:'Karnataka',icon:'fa-city'},{name:'Mysore',state:'Karnataka',icon:'fa-fort-awesome'},{name:'Hampi',state:'Karnataka',icon:'fa-monument'},{name:'Coorg',state:'Karnataka',icon:'fa-tree'},{name:'Chennai',state:'Tamil Nadu',icon:'fa-city'},{name:'Madurai',state:'TN',icon:'fa-place-of-worship'},{name:'Coimbatore',state:'TN',icon:'fa-map-marker-alt'},{name:'Trichy',state:'TN',icon:'fa-place-of-worship'},{name:'Ooty',state:'TN',icon:'fa-mountain'},{name:'Hyderabad',state:'Telangana',icon:'fa-city'},{name:'Tirupati',state:'AP',icon:'fa-place-of-worship'},{name:'Vijayawada',state:'AP',icon:'fa-map-marker-alt'},{name:'Vizag',state:'AP',icon:'fa-map-marker-alt'}
+      ],
+      'kerala-grid': [
+        {name:'Kochi',state:'Kerala',icon:'fa-ship'},{name:'Thiruvananthapuram',state:'Kerala',icon:'fa-map-marker-alt'},{name:'Munnar',state:'Kerala',icon:'fa-mountain'},{name:'Alleppey',state:'Kerala',icon:'fa-water'},{name:'Wayanad',state:'Kerala',icon:'fa-tree'},{name:'Kozhikode',state:'Kerala',icon:'fa-map-marker-alt'},{name:'Thrissur',state:'Kerala',icon:'fa-place-of-worship'},{name:'Varkala',state:'Kerala',icon:'fa-umbrella-beach'}
+      ],
+      'east-grid': [
+        {name:'Kolkata',state:'West Bengal',icon:'fa-city'},{name:'Darjeeling',state:'WB',icon:'fa-mountain'},{name:'Siliguri',state:'WB',icon:'fa-map-marker-alt'},{name:'Bhubaneswar',state:'Odisha',icon:'fa-map-marker-alt'},{name:'Puri',state:'Odisha',icon:'fa-place-of-worship'},{name:'Patna',state:'Bihar',icon:'fa-map-marker-alt'},{name:'Bodh Gaya',state:'Bihar',icon:'fa-place-of-worship'},{name:'Ranchi',state:'Jharkhand',icon:'fa-mountain'}
+      ],
+      'northeast-grid': [
+        {name:'Guwahati',state:'Assam',icon:'fa-map-marker-alt'},{name:'Shillong',state:'Meghalaya',icon:'fa-mountain'},{name:'Gangtok',state:'Sikkim',icon:'fa-mountain'},{name:'Imphal',state:'Manipur',icon:'fa-map-marker-alt'},{name:'Kohima',state:'Nagaland',icon:'fa-mountain'},{name:'Agartala',state:'Tripura',icon:'fa-map-marker-alt'},{name:'Aizawl',state:'Mizoram',icon:'fa-mountain'},{name:'Itanagar',state:'Arunachal',icon:'fa-mountain'}
+      ],
+      'central-grid': [
+        {name:'Bhopal',state:'MP',icon:'fa-map-marker-alt'},{name:'Indore',state:'MP',icon:'fa-city'},{name:'Ujjain',state:'MP',icon:'fa-place-of-worship'},{name:'Khajuraho',state:'MP',icon:'fa-monument'},{name:'Jabalpur',state:'MP',icon:'fa-map-marker-alt'},{name:'Raipur',state:'CG',icon:'fa-map-marker-alt'},{name:'Hyderabad',state:'Telangana',icon:'fa-city'},{name:'Warangal',state:'Telangana',icon:'fa-monument'}
+      ]
+    };
+
+    function buildCityCard(city) {
+      const card = document.createElement('div');
+      card.className = 's-city-card';
+      card.innerHTML = `<i class="fas ${city.icon}"></i><span class="city-name">${city.name}</span><span class="city-tag">${city.state}</span>`;
+      card.onclick = () => { window.location.href = `index.html#booking`; };
+      return card;
+    }
+
+    Object.entries(stateGroups).forEach(([gridId, cities]) => {
+      const grid = document.getElementById(gridId);
+      if (grid) cities.forEach(c => grid.appendChild(buildCityCard(c)));
+    });
+
+    function filterPageCities() {
+      const q = document.getElementById('citySearch').value.toLowerCase().trim();
+      document.querySelectorAll('.s-city-card').forEach(card => {
+        const name = card.querySelector('.city-name')?.textContent.toLowerCase() || '';
+        const tag = card.querySelector('.city-tag')?.textContent.toLowerCase() || '';
+        card.style.display = (name.includes(q) || tag.includes(q)) ? '' : 'none';
+      });
+
+      // Hide empty state groups
+      document.querySelectorAll('.state-group').forEach(group => {
+        const totalCards = group.querySelectorAll('.s-city-card').length;
+        const hiddenCards = group.querySelectorAll('.s-city-card[style*="display: none"]').length;
+        if (totalCards === hiddenCards && totalCards > 0) {
+          group.style.display = 'none';
+        } else {
+          group.style.display = '';
+        }
+      });
+    }
+
+    function bookRoute(from, to) {
+      window.location.href = `index.html#booking`;
+    }
+  </script>
+</body>
+</html>

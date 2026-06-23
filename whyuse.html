@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Why Choose Us – DriveIndia Car & Tempo Travel</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-car-side"></i>
+        <span class="logo-text">Drive<span class="accent">India</span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="cities.html">Cities</a>
+        <a href="booking.html" class="nav-book-btn"><i class="fas fa-calendar-check"></i> Book Now</a>
+        <a href="whyuse.html" class="active-page">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="badge-24"><i class="fas fa-circle-dot"></i> 24/7 Available</span>
+        <button class="btn-call" onclick="window.location.href='tel:+919999999999'">
+          <i class="fas fa-phone"></i> Call Now
+        </button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="--hero-bg:url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1600&q=80')">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Why Choose Us</span></div>
+    <h1>Why 10,000+ Travellers Choose DriveIndia</h1>
+    <p>We're committed to providing safe, reliable, and affordable travel experiences across India. Here's what sets us apart.</p>
+    <a href="booking.html" class="btn-primary" style="margin-top:12px"><i class="fas fa-calendar-check"></i> Book Your Ride</a>
+  </section>
+
+  <!-- ===== TRUST STRIP ===== -->
+  <section class="trust-strip">
+    <div class="trust-container">
+      <div class="trust-item"><i class="fas fa-shield-halved"></i><span>100% Secure Payment</span></div>
+      <div class="trust-item"><i class="fas fa-headset"></i><span>24/7 Customer Support</span></div>
+      <div class="trust-item"><i class="fas fa-route"></i><span>All India Routes</span></div>
+      <div class="trust-item"><i class="fas fa-star"></i><span>4.9★ Rated Service</span></div>
+      <div class="trust-item"><i class="fas fa-user-shield"></i><span>Verified Drivers Only</span></div>
+      <div class="trust-item"><i class="fas fa-clock"></i><span>On-Time Guarantee</span></div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section class="why-section" id="why-us">
+    <div class="section-header">
+      <p class="section-eyebrow">Our Promise</p>
+      <h2>Why 10,000+ Travellers Choose Us</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-clock"></i></div>
+        <h4>24/7 Availability</h4>
+        <p>We operate round the clock, every day of the year including holidays. Book at midnight or early morning — we're always ready.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-shield-halved"></i></div>
+        <h4>Safe & Verified Drivers</h4>
+        <p>Every driver undergoes police verification, training, and background checks. You're in safe hands on every journey.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-lock"></i></div>
+        <h4>Secure Payments</h4>
+        <p>SSL/TLS encrypted payment gateway. Pay online or cash. No hidden fees, no surprises. Transparent pricing always.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-location-crosshairs"></i></div>
+        <h4>GPS Tracked Fleet</h4>
+        <p>Every vehicle is GPS tracked in real time. Share your live trip with family for extra peace of mind on the road.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-indian-rupee-sign"></i></div>
+        <h4>Affordable Rates</h4>
+        <p>Competitive per-km rates with no surge pricing on bookings. Group travel in Tempo saves up to 60% vs cabs.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon"><i class="fas fa-headset"></i></div>
+        <h4>Dedicated Support</h4>
+        <p>Call, WhatsApp or chat anytime. Our support team resolves every query within minutes — always human, never bots.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <p class="section-eyebrow">Real Reviews</p>
+      <h2>What Our Customers Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Booked an Innova from Delhi to Jaipur at 2 AM. Driver was punctual, car was clean, AC perfect. Will always use DriveIndia!"</p>
+        <div class="testi-author"><div class="testi-avatar">R</div><div><strong>Rohit Sharma</strong><span>Delhi → Jaipur</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Organised a group tour to Manali in a 12-seater Tempo. Best experience ever — comfortable seats, good music, driver was very friendly!"</p>
+        <div class="testi-author"><div class="testi-avatar">P</div><div><strong>Priya Nair</strong><span>Bangalore → Manali</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Quick booking, instant confirmation, transparent fare. No hidden charges at all. This is how car booking should work. Highly recommend!"</p>
+        <div class="testi-author"><div class="testi-avatar">A</div><div><strong>Arjun Mehta</strong><span>Mumbai → Pune</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-section">
+    <div class="section-header">
+      <p class="section-eyebrow">Simple Process</p>
+      <h2>How It Works</h2>
+      <p class="section-sub">Book your ride in 3 simple steps</p>
+    </div>
+    <div class="steps-container">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-icon"><i class="fas fa-keyboard"></i></div>
+        <h4>Fill Booking Form</h4>
+        <p>Enter pickup, drop, date, time and choose your vehicle. Takes less than 2 minutes.</p>
+      </div>
+      <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-icon"><i class="fas fa-phone-volume"></i></div>
+        <h4>Get Confirmation</h4>
+        <p>Our team calls you within 15 minutes to confirm driver details and final fare.</p>
+      </div>
+      <div class="step-arrow"><i class="fas fa-chevron-right"></i></div>
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-icon"><i class="fas fa-car-side"></i></div>
+        <h4>Enjoy Your Ride</h4>
+        <p>Driver arrives on time at your doorstep. Sit back, relax and enjoy the journey!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><i class="fas fa-car-side"></i> <span class="logo-text">Drive<span class="accent">India</span></span></div>
+        <p>All India Car & Tempo Travel — Safe, Affordable, 24/7.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="cities.html">Cities</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Popular Routes</h4>
+        <a href="booking.html">Delhi → Agra</a>
+        <a href="booking.html">Mumbai → Pune</a>
+        <a href="booking.html">Bangalore → Mysore</a>
+        <a href="booking.html">Hyderabad → Vizag</a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="tel:+919999999999">+91 99999 99999</a>
+        <a href="mailto:support@driveindia.in">support@driveindia.in</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DriveIndia. All Rights Reserved.</p>
+      <div class="payment-icons"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i></div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="script.js"></script>
+</body>
+</html>

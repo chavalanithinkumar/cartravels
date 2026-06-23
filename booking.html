@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Your Journey – DriveIndia Car & Tempo Travel Booking</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- ===== HEADER / NAVBAR ===== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <i class="fas fa-car-side"></i>
+        <span class="logo-text">Drive<span class="accent">India</span></span>
+      </div>
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Vehicles</a>
+        <a href="cities.html">Cities</a>
+        <a href="booking.html" class="nav-book-btn active-page"><i class="fas fa-calendar-check"></i> Book Now</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-right">
+        <span class="badge-24"><i class="fas fa-circle-dot"></i> 24/7 Available</span>
+        <button class="btn-call" onclick="window.location.href='tel:+919999999999'">
+          <i class="fas fa-phone"></i> Call Now
+        </button>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero" style="--hero-bg:url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&q=80')">
+    <div class="breadcrumb"><a href="index.html">Home</a><i class="fas fa-chevron-right"></i><span>Book Your Journey</span></div>
+    <h1>Book Your Ride in Minutes</h1>
+    <p>Fill in the details below and we'll confirm your booking instantly. Safe, affordable, and reliable travel across India.</p>
+  </section>
+
+  <!-- ===== BOOKING FORM ===== -->
+  <section class="booking-section" id="booking">
+    <div class="section-header">
+      <p class="section-eyebrow">Quick & Easy</p>
+      <h2>Book Your Journey</h2>
+      <p class="section-sub">Fill in the details below and we'll confirm your booking instantly</p>
+    </div>
+
+    <div class="booking-card">
+      <!-- Trip Type Tabs -->
+      <div class="trip-tabs">
+        <button class="trip-tab active" onclick="switchTab(this, 'one-way')"><i class="fas fa-arrow-right"></i> One Way</button>
+        <button class="trip-tab" onclick="switchTab(this, 'round-trip')"><i class="fas fa-arrows-left-right"></i> Round Trip</button>
+        <button class="trip-tab" onclick="switchTab(this, 'local')"><i class="fas fa-location-dot"></i> Local / Hourly</button>
+        <button class="trip-tab" onclick="switchTab(this, 'outstation')"><i class="fas fa-road"></i> Outstation</button>
+      </div>
+
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label><i class="fas fa-user"></i> Full Name *</label>
+            <input type="text" id="fullName" placeholder="Your Full Name" required/>
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-phone"></i> Mobile Number *</label>
+            <input type="tel" id="mobile" placeholder="+91 00000 00000" required maxlength="13"/>
+            <span class="form-error" id="mobileError"></span>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-envelope"></i> Email Address *</label>
+            <input type="email" id="email" placeholder="you@example.com" required/>
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-users"></i> Number of Passengers *</label>
+            <select id="passengers" required>
+              <option value="">Select Passengers</option>
+              <option value="1">1 Passenger</option>
+              <option value="2">2 Passengers</option>
+              <option value="3">3 Passengers</option>
+              <option value="4">4 Passengers</option>
+              <option value="5-8">5–8 Passengers (Tempo)</option>
+              <option value="9-12">9–12 Passengers (Tempo Traveller)</option>
+              <option value="13-20">13–20 Passengers (Mini Bus)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-map-marker-alt"></i> Pickup City *</label>
+            <select id="pickupCity" required onchange="updateDropCity()">
+              <option value="">Select Pickup City</option>
+              <!-- Filled by JS -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-flag-checkered"></i> Drop City *</label>
+            <select id="dropCity" required>
+              <option value="">Select Drop City</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-calendar-alt"></i> Journey Date *</label>
+            <input type="date" id="journeyDate" required/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-clock"></i> Pickup Time *</label>
+            <input type="time" id="pickupTime" required/>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-car"></i> Vehicle Type *</label>
+            <select id="vehicleType" required onchange="updateVehicleDetails()">
+              <option value="">Select Vehicle</option>
+              <option value="sedan">Sedan – Swift Dzire / Etios (4 Seater)</option>
+              <option value="suv">SUV – Innova / Ertiga (6–7 Seater)</option>
+              <option value="xuv">Premium SUV – Innova Crysta / XUV700</option>
+              <option value="tempo-9">Tempo Traveller 9 Seater</option>
+              <option value="tempo-12">Tempo Traveller 12 Seater</option>
+              <option value="tempo-15">Tempo Traveller 15 Seater</option>
+              <option value="minibus">Mini Bus – 20 Seater</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label><i class="fas fa-luggage-cart"></i> Luggage</label>
+            <select id="luggage">
+              <option value="light">Light (1–2 bags)</option>
+              <option value="medium">Medium (3–4 bags)</option>
+              <option value="heavy">Heavy / Extra Large</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label><i class="fas fa-map-pin"></i> Pickup Address (Optional)</label>
+            <input type="text" id="pickupAddress" placeholder="House no / Street / Landmark for exact pickup"/>
+          </div>
+          <div class="form-group full-width">
+            <label><i class="fas fa-comment-dots"></i> Special Instructions</label>
+            <textarea id="specialInstructions" placeholder="Any special requirements — child seat, wheelchair access, stops en route, etc." rows="3"></textarea>
+          </div>
+        </div>
+
+        <!-- Price Estimator -->
+        <div class="price-estimator" id="priceEstimator" style="display:none;">
+          <div class="price-box">
+            <div class="price-label">Estimated Fare</div>
+            <div class="price-amount" id="estimatedPrice">₹ 0</div>
+            <div class="price-note">* Final fare confirmed on booking. Toll & parking extra.</div>
+          </div>
+          <div class="vehicle-info" id="vehicleInfo"></div>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="security-notice">
+          <i class="fas fa-lock"></i>
+          <p>Your data is <strong>100% encrypted & secure</strong>. We use SSL/TLS secured payment gateway. No hidden charges. Your information is never shared with third parties.</p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-book" id="bookBtn">
+            <i class="fas fa-calendar-check"></i> Confirm Booking
+          </button>
+          <button type="button" class="btn-reset" onclick="resetForm()">
+            <i class="fas fa-rotate-left"></i> Reset
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== SUCCESS MODAL ===== -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box">
+      <div class="modal-icon"><i class="fas fa-circle-check"></i></div>
+      <h3>Booking Confirmed!</h3>
+      <p>Thank you! Your booking request has been received. Our team will call you within <strong>15 minutes</strong> to confirm your ride details.</p>
+      <div class="modal-ref">Booking Ref: <strong id="bookingRef"></strong></div>
+      <div class="modal-actions">
+        <button onclick="closeModal()" class="btn-primary">Done</button>
+        <button onclick="window.location.href='tel:+919999999999'" class="btn-outline"><i class="fas fa-phone"></i> Call Support</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><i class="fas fa-car-side"></i> <span class="logo-text">Drive<span class="accent">India</span></span></div>
+        <p>All India Car & Tempo Travel Service — Safe, Affordable, 24/7 Available. Your trusted road travel partner since 2015.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="vehicles.html">Our Fleet</a>
+        <a href="cities.html">Cities We Serve</a>
+        <a href="whyuse.html">Why Us</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-links">
+        <h4>Popular Routes</h4>
+        <a href="booking.html">Delhi → Agra</a>
+        <a href="booking.html">Mumbai → Pune</a>
+        <a href="booking.html">Bangalore → Mysore</a>
+        <a href="booking.html">Chennai → Coimbatore</a>
+        <a href="booking.html">Hyderabad → Vizag</a>
+      </div>
+      <div class="footer-links">
+        <h4>Services</h4>
+        <a href="booking.html">One-Way Trips</a>
+        <a href="booking.html">Round Trips</a>
+        <a href="booking.html">Outstation Cabs</a>
+        <a href="booking.html">Local Hourly</a>
+        <a href="booking.html">Group Tempo</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 DriveIndia. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Refund Policy</a></p>
+      <div class="payment-icons">
+        <i class="fab fa-cc-visa"></i>
+        <i class="fab fa-cc-mastercard"></i>
+        <i class="fab fa-cc-paypal"></i>
+        <i class="fas fa-mobile-alt"></i>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== FLOATING ELEMENTS ===== -->
+  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
