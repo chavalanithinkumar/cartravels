@@ -61,26 +61,27 @@
         <button class="trip-tab" onclick="switchTab(this, 'outstation')"><i class="fas fa-road"></i> Outstation</button>
       </div>
 
-      <form id="bookingForm" onsubmit="submitBooking(event)">
+      <form id="bookingForm" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="e81637c7-0947-4250-a304-008b70c5d68b" />
         <div class="form-grid">
           <div class="form-group">
             <label><i class="fas fa-user"></i> Full Name *</label>
-            <input type="text" id="fullName" placeholder="Your Full Name" required/>
+            <input type="text" id="fullName" name="name" placeholder="Your Full Name" required/>
             <span class="form-error" id="nameError"></span>
           </div>
           <div class="form-group">
             <label><i class="fas fa-phone"></i> Mobile Number *</label>
-            <input type="tel" id="mobile" placeholder="+91 00000 00000" required maxlength="13"/>
+            <input type="tel" id="mobile" name="mobile" placeholder="+91 00000 00000" required maxlength="13"/>
             <span class="form-error" id="mobileError"></span>
           </div>
           <div class="form-group">
             <label><i class="fas fa-envelope"></i> Email Address *</label>
-            <input type="email" id="email" placeholder="you@example.com" required/>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required/>
             <span class="form-error" id="emailError"></span>
           </div>
           <div class="form-group">
             <label><i class="fas fa-users"></i> Number of Passengers *</label>
-            <select id="passengers" required>
+            <select id="passengers" name="passengers" required>
               <option value="">Select Passengers</option>
               <option value="1">1 Passenger</option>
               <option value="2">2 Passengers</option>
@@ -93,28 +94,28 @@
           </div>
           <div class="form-group">
             <label><i class="fas fa-map-marker-alt"></i> Pickup City *</label>
-            <select id="pickupCity" required onchange="updateDropCity()">
+            <select id="pickupCity" name="pickupCity" required onchange="updateDropCity()">
               <option value="">Select Pickup City</option>
               <!-- Filled by JS -->
             </select>
           </div>
           <div class="form-group">
             <label><i class="fas fa-flag-checkered"></i> Drop City *</label>
-            <select id="dropCity" required>
+            <select id="dropCity" name="dropCity" required>
               <option value="">Select Drop City</option>
             </select>
           </div>
           <div class="form-group">
             <label><i class="fas fa-calendar-alt"></i> Journey Date *</label>
-            <input type="date" id="journeyDate" required/>
+            <input type="date" id="journeyDate" name="journeyDate" required/>
           </div>
           <div class="form-group">
             <label><i class="fas fa-clock"></i> Pickup Time *</label>
-            <input type="time" id="pickupTime" required/>
+            <input type="time" id="pickupTime" name="pickupTime" required/>
           </div>
           <div class="form-group">
             <label><i class="fas fa-car"></i> Vehicle Type *</label>
-            <select id="vehicleType" required onchange="updateVehicleDetails()">
+            <select id="vehicleType" name="vehicleType" required onchange="updateVehicleDetails()">
               <option value="">Select Vehicle</option>
               <option value="sedan">Sedan – Swift Dzire / Etios (4 Seater)</option>
               <option value="suv">SUV – Innova / Ertiga (6–7 Seater)</option>
@@ -127,7 +128,7 @@
           </div>
           <div class="form-group">
             <label><i class="fas fa-luggage-cart"></i> Luggage</label>
-            <select id="luggage">
+            <select id="luggage" name="luggage">
               <option value="light">Light (1–2 bags)</option>
               <option value="medium">Medium (3–4 bags)</option>
               <option value="heavy">Heavy / Extra Large</option>
@@ -135,11 +136,11 @@
           </div>
           <div class="form-group full-width">
             <label><i class="fas fa-map-pin"></i> Pickup Address (Optional)</label>
-            <input type="text" id="pickupAddress" placeholder="House no / Street / Landmark for exact pickup"/>
+            <input type="text" id="pickupAddress" name="pickupAddress" placeholder="House no / Street / Landmark for exact pickup"/>
           </div>
           <div class="form-group full-width">
             <label><i class="fas fa-comment-dots"></i> Special Instructions</label>
-            <textarea id="specialInstructions" placeholder="Any special requirements — child seat, wheelchair access, stops en route, etc." rows="3"></textarea>
+            <textarea id="specialInstructions" name="specialInstructions" placeholder="Any special requirements — child seat, wheelchair access, stops en route, etc." rows="3"></textarea>
           </div>
         </div>
 
